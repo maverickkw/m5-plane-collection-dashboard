@@ -9,5 +9,4 @@ This repository shows a plane collection dashboard for plane enthusiasts.
 - Filter planes by Availability, Unavailability, Jet, Propeller, Biplane.
 - Live count of planes at top right to matching the active filter.
 - Toggle light and dark mode.
-- Built with reusable React components, props, and state management (`useState`)
-
+- Built with React components, props, and state management (`useState`).
