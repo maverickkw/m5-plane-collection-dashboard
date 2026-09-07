@@ -25,6 +25,8 @@ function Plane(props) {
 
 //Parent component
 function App() {
+  //planes by default is holding all planes data in the array. setPlanes used to update planes.
+  //useState is put here to add and remove planes, but not implemented.
   const [planes, setPlanes] = useState([
     {
       title: 'F-22 Raptor',
@@ -76,18 +78,30 @@ function App() {
     },
   ]);
 
+  //Filtering mechanism.
+  //Array destructuring, filter is current string value and setFilter is used to change the string.
+  //Current Filter value is 'All'
   const [filter, setFilter] = useState('All');
+  
+  //Light and Dark array destructuring to give me current value and fn to update it
+  //isDarkTheme is boolean
+  //isDarkTheme starts with True, forcing default dark mode.
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
+  //loop through each plane in the planes array and .filter builds a new array called filteredPlanes. 
   const filteredPlanes = planes.filter((plane) => {
+    //Show 'All'
     if (filter === 'All') {
       return true;
     }
+    //Check for either Available or Unavailable OR plane or biplane or propeller
+    //Avaiability and engineType are all encompassing categories because availabilty never conflict with engineType as filtered only by 1 filter at a time.
     return plane.availability === filter || plane.engineType === filter;
   });
 
   return (
-    //Light and Dark mode
+    //Light and Dark mode. isDarkTheme true? If yes, set 'app dark-theme' as classname.
+    //Had a bug here where i wrote app.dark-theme and app.light-theme. the . only applies in CSS Class selector.
     <div className={isDarkTheme ? 'app dark-theme' : 'app light-theme'}>
       {/*Background image*/}
       <div className="bg-image"></div>
