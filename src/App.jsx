@@ -88,8 +88,6 @@ function App() {
   //isDarkTheme starts with True, forcing default dark mode.
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
-  const [sortByRating, setSortByRating] = useState(false);
-
   //loop through each plane in the planes array and .filter builds a new array called filteredPlanes. 
   const filteredPlanes = planes.filter((plane) => {
     //Show 'All'
@@ -144,6 +142,7 @@ function App() {
       <div className="plane-grid">
         {filteredPlanes.map((plane) => (
           <Plane
+            key={plane.title}
             title={plane.title}
             image={plane.image}
             country={plane.country}
