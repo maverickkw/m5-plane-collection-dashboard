@@ -1,4 +1,4 @@
-# Title: SecureAir - Plane Collection Dashboard. Secure the skies anytime, anywhere.
+# SecureAir - Plane Collection Dashboard. Secure the skies anytime, anywhere.
 
 This repository shows a plane collection dashboard for plane enthusiasts.
 ![Screenshot](./readme-screenshot/screenshot_small.jpg)
